@@ -11,6 +11,7 @@ import EditComment from './components/comments/EditComment';
 import Home from './components/home/Home';
 import Menu from './components/menu/Menu';
 import TopNav from './components/navbar/TopNav';
+import Footer from './components/footer/Footer'
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
         <Route path='/send-order' element={<SendOrder />} />
         <Route path='/404' element={<NotFound />} />
       </Routes>
+
+      <Footer/>
+      
     </div>
   );
 }

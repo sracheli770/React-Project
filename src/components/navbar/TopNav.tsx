@@ -26,7 +26,7 @@ const TopNav = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className={`mx-auto ${css.nav}`}>
                             <NavLink className='nav-link mx-2' to="/">עמוד הבית</NavLink>
-                            <NavLink className='nav-link mx-2' to="/about">עלינו</NavLink>
+                            <NavLink className='nav-link mx-2' to="/about">אודות</NavLink>
                             <NavLink className='nav-link mx-2' to="/comments">לקוחות כותבים</NavLink>
                             <NavLink className='nav-link mx-2' to="/cart">סל קניות</NavLink>
                         </Nav>

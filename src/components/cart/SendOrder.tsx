@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import Swal from 'sweetalert2';
-import { cart, clearCart } from '../../features/cart/cartSlice'
+import {clearCart } from '../../features/cart/cartSlice'
 import PaymentsOptions from '../orderOptions/PaymentsOptions';
 import OrderOptions from '../orderOptions/OrderOptions';
 import UserDetails from '../orderOptions/UserDetails';
@@ -15,6 +15,11 @@ const Order = () => {
     let totalPrice = 0
     cartMenu.forEach(m => totalPrice += m.price)
     const detailsNumber = cartMenu.length
+    let totalWithShipping = totalPrice + 35
+
+    if (totalPrice > 100) {
+        totalWithShipping = totalPrice
+    }
 
     return (
         <div dir='rtl' className='text-center mx-auto'>
@@ -23,7 +28,9 @@ const Order = () => {
             <div className='card mx-auto w-50'>
                 <h4 className='my-3'>סיכום פרטי הזמנה</h4>
                 <h6 className='mb-3'>מספר הפריטים בסל: {detailsNumber}</h6>
-                <h5>סה"כ לתשלום:  {totalPrice} &#8362; </h5>
+                <h6 className='mb-3'>סה"כ: {totalPrice} &#8362;</h6>
+                <h6 className='mb-3'>דמי משלוח: 35 &#8362;</h6>
+                <h5>סה"כ לתשלום:  {totalWithShipping} &#8362; </h5>
             </div>
 
             <div className='card p-3 mt-4 w-50 mx-auto'>

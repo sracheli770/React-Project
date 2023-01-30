@@ -2,7 +2,7 @@ import MenuItem from '../menu/MenuItem';
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { cart, clearCart } from '../../features/cart/cartSlice'
+import { clearCart } from '../../features/cart/cartSlice'
 import Swal from 'sweetalert2';
 import { BsTrash } from "react-icons/bs";
 
@@ -27,9 +27,9 @@ const InCart = () => {
                     ))}
                 </div>
 
-                {cartMenu.length < 1 && <h4 className="text-center text-danger">הסל שלך ריק כרגע</h4>}
+                {cartMenu.length < 1 && <h5 className="text-center text-danger my-3">הסל שלך ריק כרגע</h5>}
 
-                <div className='card mx-auto w-50'>
+                <div className='card mx-auto w-50 my-3'>
                     <h4 className='my-3'>סיכום פרטי הזמנה</h4>
                     <h6 className='mb-3'>מספר הפריטים בסל: {detailsNumber}</h6>
                     <h5>סה"כ לתשלום:  {totalPrice} &#8362; </h5>
@@ -37,7 +37,7 @@ const InCart = () => {
             </div>
 
 
-            <button className="btn btn-light m-3" onClick={() => { navigate(-1); }}>חזרה לתפריט ראשי</button>
+            <button className="btn btn-light m-3" onClick={() => { navigate(-1); }}>חזרה</button>
 
             <button dir='rtl' className="btn btn-success m-3"
                 onClick={() => {
