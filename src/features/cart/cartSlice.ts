@@ -36,6 +36,7 @@ const cartSlice = createSlice({
         },
         clearCart: (state) => {
             state.menu.forEach(m => m.inCart = false);
+            state.totalPrice = 0;
         },
         shippingPrice: (state) => {
             state.menu.forEach(m => {
