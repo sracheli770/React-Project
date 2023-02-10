@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const UserDetails = ({locationCode}:any) => {
+const UserDetails = ({ theCity }: any) => {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [city, setCity] = useState('')
@@ -40,8 +40,9 @@ const UserDetails = ({locationCode}:any) => {
                     id='city'
                     value={city}
                     onChange={(e) => {
-                        setCity(e.currentTarget.value)
-                        locationCode(e.currentTarget.value)
+                        const city = e.currentTarget.value
+                        setCity(city)
+                        theCity(city)
                     }}
                     placeholder="עיר מגורים"
                     className="form-control" />

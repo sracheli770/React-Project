@@ -1,14 +1,11 @@
-import React, { useState } from 'react'
-import { useAppDispatch } from '../../app/hooks'
-import { addShippingPrice,removeShippingPrice } from '../../features/shippingPrice'
+import { useState } from 'react'
 import Ship from './Ship'
 import Sit from './Sit'
 import Take from './Take'
 
-const OrderOptions = () => {
-    const [orderOptions, setOrderOptions] = useState('sit')    
+const OrderOptions = ({ theOption }: any) => {
+    const [orderOptions, setOrderOptions] = useState('sit')
     const [orderOption, setOrderOption] = useState(Sit)
-    const dispatch=useAppDispatch()
 
     return (
         <>
@@ -21,9 +18,10 @@ const OrderOptions = () => {
                     onChange={(e) => {
                         const option = e.currentTarget.value;
                         setOrderOptions(option)
+                        theOption(option)
 
                         switch (option) {
-                            case 'sit': setOrderOption(Sit) ; break;
+                            case 'sit': setOrderOption(Sit); break;
                             case 'take': setOrderOption(Take); break;
                             case 'ship': setOrderOption(Ship); break;
                         }

@@ -27,7 +27,11 @@ const AddComment = () => {
                         id='name'
                         value={name}
                         onChange={(e) => {
-                            setName(e.currentTarget.value)
+                            const name = e.currentTarget.value
+                            setName(name)
+                            if (name.length < 1) {
+                                setName('אנונימי')
+                            }
                         }}
                         placeholder="שם"
                         className="form-control" />
