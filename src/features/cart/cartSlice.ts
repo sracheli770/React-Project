@@ -5,7 +5,8 @@ import { mainMenu } from '../../services/mainMenu';
 //ולתת טייפ לאינישיאל סטייט
 const initialState = {
     itemsInCart: 0,
-    menu: mainMenu
+    menu: mainMenu,
+    totalPrice: 0
 }
 
 const cartSlice = createSlice({
@@ -24,12 +25,25 @@ const cartSlice = createSlice({
             if (index !== -1) {
                 state.menu[index].inCart = !state.menu[index].inCart;
             }
+
+            if (state.menu[index].inCart) {
+                state.totalPrice += state.menu[index].price
+            }
+
+            if (!state.menu[index].inCart) {
+                state.totalPrice -= state.menu[index].price
+            }
         },
         clearCart: (state) => {
             state.menu.forEach(m => m.inCart = false);
+        },
+        shippingPrice: (state) => {
+            state.menu.forEach(m => {
+                state.totalPrice += m.price
+            })
         }
     }
 });
 
-export const { addToCart, removeFromCart, cart, clearCart } = cartSlice.actions
+export const { addToCart, removeFromCart, cart, clearCart, shippingPrice } = cartSlice.actions
 export default cartSlice.reducer

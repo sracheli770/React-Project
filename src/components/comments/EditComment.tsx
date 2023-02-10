@@ -12,8 +12,9 @@ const EditComment = () => {
 
     const commentToEdit = comments.find(c => c.id === id)
 
-    const [name, setName] = useState(commentToEdit?.name ?? '')
+    const [name, setName] = useState(commentToEdit?.name ?? 'אנונימי')
     const [comment, setComment] = useState(commentToEdit?.comment ?? '')
+    const [note, setNote] = useState(<></>)
 
     if (commentToEdit === undefined) {
         return <Navigate to="/404" />
@@ -52,8 +53,11 @@ const EditComment = () => {
                 </div>
                 <br />
 
+                {note}
 
                 <button className='btn btn-success w-25' onClick={() => {
+                    if (comment.length < 4) { setNote(<p className='text-end text-danger'>תגובתך צריכה להכיל לפחות 4 תווים</p>); return }
+
                     const editedComment: Comments = {
                         name: name,
                         comment: comment,

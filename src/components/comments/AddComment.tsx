@@ -10,8 +10,9 @@ const AddComment = () => {
     const dispatch = useAppDispatch()
 
 
-    const [name, setName] = useState('')
+    const [name, setName] = useState('אנונימי')
     const [comment, setComment] = useState('')
+    const [note, setNote] = useState(<></>)
 
 
     return (
@@ -27,9 +28,6 @@ const AddComment = () => {
                         value={name}
                         onChange={(e) => {
                             setName(e.currentTarget.value)
-                            if (e.currentTarget.value.length < 1) {
-                                setName('אורח')
-                            }
                         }}
                         placeholder="שם"
                         className="form-control" />
@@ -50,10 +48,13 @@ const AddComment = () => {
                 </div>
                 <br />
 
+                {note}
 
                 <button className='btn btn-success w-25' onClick={() => {
+                    if (comment.length < 4) { setNote(<p className='text-end text-danger'>תגובתך צריכה להכיל לפחות 4 תווים</p>); return }
+
                     const newComment: Comments = {
-                        name: name ?? 'אורח',
+                        name: name,
                         comment: comment,
                         id: v4()
                     };

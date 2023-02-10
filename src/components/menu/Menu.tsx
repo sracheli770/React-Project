@@ -15,10 +15,11 @@ const Menu = () => {
   const category = homeMenu.find(c => c.category === menu)!
   const nameOfCategory = category.name
 
+  const [menuu, setMenu] = useState(theMenu)
   const glutenFree2 = theMenu.filter(m => m.glutenFree)
   const vegetarian = theMenu.filter(m => m.vegetarian)
   const glutandvaga = theMenu.filter(m => m.glutenFree && m.vegetarian)
-  const [menuu, setMenu] = useState(theMenu)
+
 
   //לחפש משפט תנאי מתאים ומיקום מתאים, כרגע עובד
   /* if (!theMenu) {
@@ -51,7 +52,6 @@ const Menu = () => {
           <option value="both">נטול גלוטן וצמחוני</option>
         </select>
       </div>
-
 
       <div className='d-flex flex-wrap justify-content-center mx-auto w-75'>
         {menuu.map((a) => (

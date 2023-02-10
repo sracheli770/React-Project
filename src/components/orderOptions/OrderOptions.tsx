@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useAppDispatch } from '../../app/hooks'
+import { addShippingPrice,removeShippingPrice } from '../../features/shippingPrice'
 import Ship from './Ship'
 import Sit from './Sit'
 import Take from './Take'
@@ -6,6 +8,7 @@ import Take from './Take'
 const OrderOptions = () => {
     const [orderOptions, setOrderOptions] = useState('sit')    
     const [orderOption, setOrderOption] = useState(Sit)
+    const dispatch=useAppDispatch()
 
     return (
         <>
@@ -20,7 +23,7 @@ const OrderOptions = () => {
                         setOrderOptions(option)
 
                         switch (option) {
-                            case 'sit': setOrderOption(Sit); break;
+                            case 'sit': setOrderOption(Sit) ; break;
                             case 'take': setOrderOption(Take); break;
                             case 'ship': setOrderOption(Ship); break;
                         }
