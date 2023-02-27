@@ -13,7 +13,7 @@ const Customers = () => {
       <h2 className='my-3'>לקוחות כותבים</h2>
       <p className='text-end w-50 mx-auto'>לקוחות יקרים, זוהי הפינה שלכם =) <br /> מוזמנים לכתוב תגובות עלינו, המלצות על המקום ועל האוכל, <br /> שילובי מנות שאהבתם, וככל העולה על רוחכם. <br />נשמח לשמוע ממכם על מנת שנדע לשמר ולהשתפר.</p>
 
-      <button className="btn btn-outline-dark my-3" onClick={() => { nav(`/comments/add-comment`) }}><BsChatDots />   הוסף תגובה  </button>
+      <button className="btn btn-outline-secondary my-4" onClick={() => { nav(`/comments/add-comment`) }}><BsChatDots />   הוסף תגובה  </button>
       <div className='d-flex flex-wrap justify-content-center mx-auto w-75 mb-5'>
         {comments.map((c) => (
           <CommentItem key={c.id} {...c} />

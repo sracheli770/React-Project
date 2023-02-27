@@ -45,7 +45,9 @@ const Menu = () => {
               case 'vegetarian': setMenu(vegetarian); break;
               case 'both': setMenu(glutandvaga); break;
             }
-          }}>
+          }}
+          style={{ backgroundColor: '#fbf8ee' }}
+        >
           <option value="all">הצג הכל</option>
           <option value="glutenFree">נטול גלוטן</option>
           <option value="vegetarian">צמחוני</option>
@@ -59,7 +61,7 @@ const Menu = () => {
         ))}
       </div>
 
-      <button className="btn btn-outline-secondary mb-3" onClick={() => { navigate(-1); }}>חזרה לתפריט ראשי</button>
+      <button className="btn btn-outline-secondary my-3" onClick={() => { navigate(-1); }}>חזרה לתפריט ראשי</button>
     </div >
   )
 }

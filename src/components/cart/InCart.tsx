@@ -15,21 +15,26 @@ const InCart = () => {
     cartMenu.forEach(m => totalPrice += m.price)
     const detailsNumber = cartMenu.length
 
-
     return (
         <div dir='rtl' className='container text-center'>
             <h2 className='my-3'>סל הקניות שלך</h2>
 
-            <div className="">
+            <div>
                 <div className='d-flex flex-wrap justify-content-center mx-auto w-75'>
                     {cartMenu.map(a => (
                         <MenuItem key={a.id} {...a} />
                     ))}
                 </div>
 
-                {cartMenu.length < 1 && <h5 className="text-center text-danger my-3">הסל שלך ריק כרגע</h5>}
+                {cartMenu.length < 1 && (
+                    <>
+                        <h5 className="text-center text-danger mb-3 mt-5">הסל שלך ריק כרגע</h5>
+                        <div className='my-3 py-3'></div>
+                    </>
+                )}
 
-                <div className='card mx-auto w-50 my-3'>
+
+                <div className='card mx-auto w-50 my-4' style={{ backgroundColor: '#fbf8ee' }}>
                     <h4 className='my-3'>סיכום פרטי הזמנה</h4>
                     <h6 className='mb-3'>מספר הפריטים בסל: {detailsNumber}</h6>
                     <h5>סה"כ לתשלום:  {totalPrice} &#8362; </h5>
@@ -37,9 +42,8 @@ const InCart = () => {
             </div>
 
 
-            <button className="btn btn-light m-3" onClick={() => { navigate(-1); }}>חזרה</button>
 
-            <button dir='rtl' className="btn btn-success m-3"
+            <button dir='rtl' className="btn btn-outline-success m-3 my-5"
                 onClick={() => {
                     navigate('/send-order')
                 }} >
@@ -47,13 +51,15 @@ const InCart = () => {
             </button>
 
 
-            <button dir='rtl' className="btn btn-danger m-3"
+            <button dir='rtl' className="btn btn-outline-danger m-3 my-5"
                 onClick={() => {
                     Swal.fire({
                         title: 'האם אתה בטוח שברצונך לרוקן את הסל?',
                         showDenyButton: true,
                         confirmButtonText: 'כן',
                         denyButtonText: 'לא',
+                        confirmButtonColor: 'green',
+                        cancelButtonColor: 'red'
                     }).then((result) => {
                         if (result.isConfirmed) {
                             dispatch(clearCart())
@@ -62,7 +68,6 @@ const InCart = () => {
                             Swal.fire('המשך בקניה', '', 'info')
                         }
                     })
-
                 }}      >
                 <BsTrash /> רוקן סל
             </button>

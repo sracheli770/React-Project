@@ -21,6 +21,7 @@ const PaymentsOptions = () => {
                     const num = e.currentTarget.value;
                     setPaymentsNumber(num)
                 }}
+                style={{ backgroundColor: '#fbf8ee' }}
             >
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -37,7 +38,8 @@ const PaymentsOptions = () => {
                     setCardNumber(e.currentTarget.value)
                 }}
                 placeholder="1234 - 1234 - 1234 - 1234"
-                className="form-control" />
+                className="form-control"
+                style={{ backgroundColor: '#fbf8ee' }} />
         </div>
 
         <div className='label-input my-3 d-flex w-50'>
@@ -49,7 +51,8 @@ const PaymentsOptions = () => {
                     setValidity(e.currentTarget.value)
                 }}
                 placeholder="10/25"
-                className="form-control" />
+                className="form-control"
+                style={{ backgroundColor: '#fbf8ee' }} />
         </div>
 
         <div className='label-input my-3 d-flex w-50'>
@@ -61,7 +64,8 @@ const PaymentsOptions = () => {
                     setCvv(e.currentTarget.value)
                 }}
                 placeholder="123"
-                className="form-control" />
+                className="form-control" 
+                style={{ backgroundColor: '#fbf8ee' }}/>
         </div>
     </>
 
@@ -87,6 +91,7 @@ const PaymentsOptions = () => {
                           case 'cash': setPaymentOption(cash); break;
                       }
                   }}
+                  style={{ backgroundColor: '#fbf8ee' }}
               >
                   <option value="creditCard">כרטיס אשראי</option>
                   <option value="cash">מזומן</option>

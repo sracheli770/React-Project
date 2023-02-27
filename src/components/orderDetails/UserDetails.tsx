@@ -19,7 +19,8 @@ const UserDetails = ({ theCity }: any) => {
                         setFirstName(e.currentTarget.value)
                     }}
                     placeholder="שם פרטי"
-                    className="form-control" />
+                    className="form-control"
+                    style={{ backgroundColor: '#fbf8ee' }} />
             </div>
 
             <div className='label-input my-3 d-flex'>
@@ -31,7 +32,8 @@ const UserDetails = ({ theCity }: any) => {
                         setLastName(e.currentTarget.value)
                     }}
                     placeholder="שם משפחה"
-                    className="form-control" />
+                    className="form-control"
+                    style={{ backgroundColor: '#fbf8ee' }} />
             </div>
 
             <div className='label-input my-3 d-flex'>
@@ -45,7 +47,8 @@ const UserDetails = ({ theCity }: any) => {
                         theCity(city)
                     }}
                     placeholder="עיר מגורים"
-                    className="form-control" />
+                    className="form-control"
+                    style={{ backgroundColor: '#fbf8ee' }} />
             </div>
 
             <div className='label-input my-3 d-flex'>
@@ -57,7 +60,8 @@ const UserDetails = ({ theCity }: any) => {
                         setStreet(e.currentTarget.value)
                     }}
                     placeholder="רחוב"
-                    className="form-control" />
+                    className="form-control"
+                    style={{ backgroundColor: '#fbf8ee' }} />
             </div>
 
             <div className='label-input my-3 d-flex'>
@@ -69,7 +73,8 @@ const UserDetails = ({ theCity }: any) => {
                         setHouseNumber(e.currentTarget.value)
                     }}
                     placeholder="מספר בית"
-                    className="form-control" />
+                    className="form-control"
+                    style={{ backgroundColor: '#fbf8ee' }} />
             </div>
 
             <div className="label-input d-flex my-4">
@@ -83,6 +88,7 @@ const UserDetails = ({ theCity }: any) => {
                         setNotes(e.currentTarget.value)
                     }}
                     placeholder="הערות נוספות לשליח"
+                    style={{ backgroundColor: '#fbf8ee' }}
                 ></textarea>
             </div>
         </>

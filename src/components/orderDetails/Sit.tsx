@@ -7,7 +7,8 @@ const Sit = () => {
             <input
                 type="time"
                 id="timeSit"
-                className="form-control w-50 me-0" />
+                className="form-control w-50 me-0"
+                style={{ backgroundColor: '#fbf8ee' }} />
         </div >
     )
 }

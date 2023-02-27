@@ -1,20 +1,20 @@
 .btn {
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    padding: 8px 0;
-    font-size: 15px;
-    line-height: 1.37;
-    border-radius: 20px;
+    width: 45px;
+    height: 45px;
 }
 
-.footer {
-    position: relative;
-    bottom: 0;
-    /* left: 0;
-    right: 0; */
-}
+/* .footer {
+    //position: absolute;
+    // bottom: 0;
+    //: 50%;
+    //margin: 0 auto;
+    //height: 50px;
+   // background-color: #fbf8ee;
+   border-top: 0.5px solid #000;
+   margin-top: 15px;
+} */
 
-.footerContainer{
-    position: relative;
+.border {
+    border-top: 0.5px solid #000;
+    margin-top: 15px;
 }

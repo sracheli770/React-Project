@@ -1,3 +1,20 @@
-.nav{
+/* .nav {
     padding-left: 14%;
+}
+אם מורידה- להוריד גם בקובץ של הקומפוננטה את הקלאס הזה
+ */
+
+.body {
+    background-color: #fbf8ee;
+}
+
+.limit {
+    cursor: default;
+    display: block;
+}
+
+@media screen and (max-width:991.5px) {
+    .limit {
+        display: none !important;
+    }
 }

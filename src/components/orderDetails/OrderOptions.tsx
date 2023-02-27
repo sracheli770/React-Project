@@ -26,6 +26,7 @@ const OrderOptions = ({ theOption }: any) => {
                             case 'ship': setOrderOption(Ship); break;
                         }
                     }}
+                    style={{ backgroundColor: '#fbf8ee' }}
                 >
                     <option value="sit">ישיבה במקום</option>
                     <option value="take">איסוף עצמי</option>

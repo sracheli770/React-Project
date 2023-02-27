@@ -7,7 +7,8 @@ const Take = () => {
             <input
                 type='time'
                 id='timeTake'
-                className="form-control w-50 me-0" />
+                className="form-control w-50 me-0"
+                style={{ backgroundColor: '#fbf8ee' }} />
         </div >
     )
 }

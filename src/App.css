@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #fbf8ee;
+  padding-top: 15px;
 }
 
 .App-logo {
@@ -30,10 +32,26 @@
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(10px);
   }
+
   100% {
     transform: translateY(0px);
   }
+}
+
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Heebo';
+}
+
+p,
+div {
+  font-family: 'Alef';
 }

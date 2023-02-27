@@ -8,6 +8,7 @@ const Ship = () => {
                 <select className='form-select w-25'
                     name='timeShip'
                     id='timeShip'
+                    style={{ backgroundColor: '#fbf8ee' }}
                 >
                     <option value="17-19">17:00-19:00</option>
                     <option value="19-21">19:00-21:00</option>

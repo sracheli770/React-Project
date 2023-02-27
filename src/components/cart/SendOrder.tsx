@@ -7,6 +7,8 @@ import PaymentsOptions from '../orderDetails/PaymentsOptions';
 import OrderOptions from '../orderDetails/OrderOptions';
 import UserDetails from '../orderDetails/UserDetails';
 import { addShippingPrice, removeShippingPrice } from '../../features/shippingPrice/shippingPrice'
+import UserDetails2 from '../orderDetails/UserDetails2';
+import UserDetails3 from '../orderDetails/UserDetails3';
 
 const Order = () => {
     const navigate = useNavigate()
@@ -63,7 +65,6 @@ const Order = () => {
         }
     }
 
-
     const cityHandler = (city: string) => {
         if (city === 'תל אביב' || city === 'תל-אביב' || city === 'ת"א' || city === 'תא') {
             setPrice(totalWithoutShipping)
@@ -91,16 +92,16 @@ const Order = () => {
         <div dir='rtl' className='text-center mx-auto'>
             <h2 className='m-3'>סיום הזמנה</h2>
 
-            <div className='card mx-auto w-50'>
+            <div className='card mx-auto w-50' style={{ backgroundColor: '#fbf8ee' }}>
                 <h4 className='my-3'>סיכום פרטי הזמנה</h4>
                 <h6 className='mb-3'>מספר הפריטים בסל: {detailsNumber}</h6>
                 {priceShipping}
                 <h5>סה"כ לתשלום:  {price} &#8362; </h5>
             </div>
 
-            <div className='card p-3 mt-4 w-50 mx-auto'>
+            <div className='card p-3 mt-4 w-50 mx-auto' style={{ backgroundColor: '#fbf8ee' }}>
                 <h5>פרטים אישיים:</h5>
-                <UserDetails theCity={cityHandler} />
+                <UserDetails2 theCity={cityHandler} />
                 <OrderOptions theOption={optionHandler} />
 
 

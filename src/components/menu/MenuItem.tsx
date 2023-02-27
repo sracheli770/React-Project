@@ -13,7 +13,7 @@ const MenuItem = ({ image, name, description, category, price, id, inCart }: Dis
 
 
   return (
-    <div className={`card m-2 ${css.card}`}>
+    <div className={`card m-2 ${css.card}`} style={{ backgroundColor: '#fbf8ee' }}>
       <div className='card-body'>
         <h4 className='card-title'>{name}</h4>
         <img className='w-100 mx-auto' src={image} alt={name} />

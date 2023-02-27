@@ -22,11 +22,11 @@ const EditComment = () => {
 
     return (
         <div dir='rtl' className='my-4 text-center mx-auto'>
-            <h3>עריכת תגובה</h3>
+            <h3 className='my-4'>עריכת תגובה</h3>
 
-            <div className='card p-3 mt-4 w-50 mx-auto'>
+            <div className='card p-3 w-50 mx-auto my-5' style={{ backgroundColor: '#fbf8ee' }}>
 
-                <div className='label-input my-3 d-flex w-75'>
+                <div className='label-input my-4 d-flex w-75'>
                     <label htmlFor="name">שם: &nbsp; &nbsp;</label>
                     <input
                         id='name'
@@ -39,10 +39,11 @@ const EditComment = () => {
                             }
                         }}
                         placeholder="שם"
-                        className="form-control" />
+                        className="form-control"
+                        style={{ backgroundColor: '#fbf8ee' }} />
                 </div>
 
-                <div className="label-input d-flex w-75">
+                <div className="label-input my-4 d-flex w-75">
                     <label htmlFor='comment'>תגובה: &nbsp; &nbsp;</label>
                     <textarea
                         id="comment"
@@ -53,13 +54,14 @@ const EditComment = () => {
                             setComment(e.currentTarget.value)
                         }}
                         placeholder="הוסף תגובה"
+                        style={{ backgroundColor: '#fbf8ee' }}
                     ></textarea>
                 </div>
                 <br />
 
                 {note}
 
-                <button className='btn btn-success w-25' onClick={() => {
+                <button className='btn btn-success w-25 mx-auto mt-3 mb-5' onClick={() => {
                     if (comment.length < 4) { setNote(<p className='text-end text-danger'>תגובתך צריכה להכיל לפחות 4 תווים</p>); return }
 
                     const editedComment: Comments = {
