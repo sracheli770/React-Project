@@ -1,97 +1,139 @@
-import React, { useState } from 'react'
+/* eslint-disable @typescript-eslint/no-redeclare */
+import React from 'react'
+import * as yup from "yup";
+import { ErrorMessage, Field, Form, Formik } from "formik";
+import { UserDetailsType } from '../../@types/types';
+
+const initialValues: UserDetailsType = {
+    firstName: "",
+    lastName: "",
+    city: "",
+    street: "",
+    houseNumber: "",
+    notes: ""
+};
+
+//Validations:
+const validationSchema = yup.object().shape({
+    firstName: yup.string().min(3, "שדה זה צריך להכיל לפחות 3 תווים").required("זהו שדה חובה"),
+    lastName: yup.string().min(3, "שדה זה צריך להכיל לפחות 3 תווים").required("זהו שדה חובה"),
+    city: yup.string().min(3, "שדה זה צריך להכיל לפחות 3 תווים").required("זהו שדה חובה"),
+    street: yup.string().min(3, "שדה זה צריך להכיל לפחות 3 תווים").required("זהו שדה חובה"),
+    houseNumber: yup.string().required("זהו שדה חובה"),
+    notes: yup.string()
+});
+
 
 const UserDetails = ({ theCity }: any) => {
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [city, setCity] = useState('')
-    const [street, setStreet] = useState('')
-    const [houseNumber, setHouseNumber] = useState('')
-    const [notes, setNotes] = useState('')
 
     return (
-        <>
-            <div className='label-input my-3 d-flex'>
-                <label htmlFor="fName">שם פרטי: &nbsp; &nbsp;</label>
-                <input
-                    id='fName'
-                    value={firstName}
-                    onChange={(e) => {
-                        setFirstName(e.currentTarget.value)
-                    }}
-                    placeholder="שם פרטי"
-                    className="form-control"
-                    style={{ backgroundColor: '#fbf8ee' }} />
-            </div>
+        <div>
+            <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={values => {
+                    console.log(values);
+                }}
+            >
+                {({ errors, touched }) => (
+                    <Form>
+                        <Field
+                            name="firstName"
+                            id='firstName'
+                            type="text"
+                            placeholder="שם פרטי"
+                            className="form-control mt-3"
+                            style={{ backgroundColor: '#fbf8ee' }}
+                        />
+                        <ErrorMessage
+                            name="firstName"
+                            component="div"
+                            className="text-danger text-end mt-1 p-1"
+                        />
 
-            <div className='label-input my-3 d-flex'>
-                <label htmlFor="lName">שם משפחה: &nbsp; &nbsp;</label>
-                <input
-                    id='lName'
-                    value={lastName}
-                    onChange={(e) => {
-                        setLastName(e.currentTarget.value)
-                    }}
-                    placeholder="שם משפחה"
-                    className="form-control"
-                    style={{ backgroundColor: '#fbf8ee' }} />
-            </div>
+                        <Field
+                            name="lastName"
+                            id='lastName'
+                            type="text"
+                            placeholder="שם משפחה"
+                            className="form-control mt-3"
+                            style={{ backgroundColor: '#fbf8ee' }}
+                        />
+                        <ErrorMessage
+                            name="lastName"
+                            component="div"
+                            className="text-danger text-end mt-1 p-1"
+                        />
 
-            <div className='label-input my-3 d-flex'>
-                <label htmlFor="city">עיר: &nbsp; &nbsp;</label>
-                <input
-                    id='city'
-                    value={city}
-                    onChange={(e) => {
-                        const city = e.currentTarget.value
-                        setCity(city)
-                        theCity(city)
-                    }}
-                    placeholder="עיר מגורים"
-                    className="form-control"
-                    style={{ backgroundColor: '#fbf8ee' }} />
-            </div>
+                        <Field
+                            name="city"
+                            id='city'
+                            onKeyUp={(e: any) => {
+                                const city = e.currentTarget.value
+                                theCity(city)
+                            }}
+                            type="text"
+                            placeholder="עיר מגורים"
+                            className="form-control mt-3"
+                            style={{ backgroundColor: '#fbf8ee' }}
+                        />
+                        <ErrorMessage
+                            name="city"
+                            component="div"
+                            className="text-danger text-end mt-1 p-1"
+                        />
 
-            <div className='label-input my-3 d-flex'>
-                <label htmlFor="street">רחוב: &nbsp; &nbsp;</label>
-                <input
-                    id='street'
-                    value={street}
-                    onChange={(e) => {
-                        setStreet(e.currentTarget.value)
-                    }}
-                    placeholder="רחוב"
-                    className="form-control"
-                    style={{ backgroundColor: '#fbf8ee' }} />
-            </div>
+                        <Field
+                            name="street"
+                            id='street'
+                            type="text"
+                            placeholder="רחוב"
+                            className="form-control mt-3"
+                            style={{ backgroundColor: '#fbf8ee' }}
+                        />
+                        <ErrorMessage
+                            name="street"
+                            component="div"
+                            className="text-danger text-end mt-1 p-1"
+                        />
 
-            <div className='label-input my-3 d-flex'>
-                <label htmlFor="houseNumber">מס' בית: &nbsp; &nbsp;</label>
-                <input
-                    id='houseNumber'
-                    value={houseNumber}
-                    onChange={(e) => {
-                        setHouseNumber(e.currentTarget.value)
-                    }}
-                    placeholder="מספר בית"
-                    className="form-control"
-                    style={{ backgroundColor: '#fbf8ee' }} />
-            </div>
+                        <Field
+                            name="houseNumber"
+                            id='houseNumber'
+                            type="number"
+                            placeholder="מספר בית"
+                            className="form-control mt-3"
+                            style={{ backgroundColor: '#fbf8ee' }}
+                        />
+                        <ErrorMessage
+                            name="houseNumber"
+                            component="div"
+                            className="text-danger text-end mt-1 p-1"
+                        />
 
-            <div className="label-input d-flex my-4">
-                <label htmlFor='notes'>הערות: &nbsp; &nbsp;</label>
-                <textarea
-                    id="notes"
-                    className="form-control"
-                    aria-label="With textarea"
-                    value={notes}
-                    onChange={(e) => {
-                        setNotes(e.currentTarget.value)
-                    }}
-                    placeholder="הערות נוספות לשליח"
-                    style={{ backgroundColor: '#fbf8ee' }}
-                ></textarea>
-            </div>
-        </>
+                        <textarea
+                            name="notes"
+                            id='notes'
+                            aria-label="With textarea"
+                            placeholder="הערות נוספות לשליח"
+                            className="form-control mt-3"
+                            style={{ backgroundColor: '#fbf8ee' }} />
+                        <ErrorMessage
+                            name="notes"
+                            component="div"
+                            className="text-danger text-end mt-1 p-1"
+                        />
+
+                        <button
+                            className="btn btn-danger w-25 mx-auto mt-3"
+                            type="submit"
+                        >
+                            שלח הזמנה
+                        </button>
+                    </Form>
+                )}
+            </Formik>
+        </div>
     )
 }
 

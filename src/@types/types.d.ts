@@ -8,6 +8,7 @@ export type Dish = {
     price: number;
     id: string;
     inCart: boolean;
+    qty:number;
 };
 
 export type Home = {
@@ -18,12 +19,11 @@ export type Home = {
 
 export type Comments = {
     name?: string;
-    //category: string;
     comment: string;
     id: string
 }
 
-export type UserDetails = {
+export type UserDetailsType = {
     firstName: string;
     lastName: string;
     city: string;

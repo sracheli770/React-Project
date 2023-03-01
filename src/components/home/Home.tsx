@@ -12,7 +12,7 @@ const Home = () => {
 
     return (
         <div dir='rtl' className='container text-center'>
-            <img src={logo} alt="" />
+            <img className={css.logo} src={logo} alt="" />
              <h2 className='my-4'>ברוכים הבאים למסעדת אסאדו</h2>
             <AboutUs/>
 

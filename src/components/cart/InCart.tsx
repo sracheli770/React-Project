@@ -10,10 +10,9 @@ const InCart = () => {
     const navigate = useNavigate()
     const dispatch = useAppDispatch()
     const { menu } = useAppSelector(state => state.cart)
-    const cartMenu = menu.filter(m => m.inCart)
-    let totalPrice = 0
-    cartMenu.forEach(m => totalPrice += m.price)
-    const detailsNumber = cartMenu.length
+    const cartMenu = menu.filter(m => m.qty > 0)
+    const totalPrice = useAppSelector(state=>state.cart.totalPrice)
+    const detailsNumber = useAppSelector(state=>state.cart.itemsInCart)
 
     return (
         <div dir='rtl' className='container text-center'>

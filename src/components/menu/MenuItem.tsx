@@ -4,13 +4,17 @@ import css from './MenuItem.module.scss'
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Badge from "@material-ui/core/Badge";
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { cart } from '../../features/cart/cartSlice'
-import Cart from '../cart/Cart';
+import { addToCart, removeFromCart } from '../../features/cart/cartSlice'
+import RemoveIcon from "@material-ui/icons/Remove";
+import AddIcon from "@material-ui/icons/Add";
 
-const MenuItem = ({ image, name, description, category, price, id, inCart }: Dish) => {
+const MenuItem = ({ image, name, description, category, price, id, inCart, qty }: Dish) => {
   const dispatch = useAppDispatch()
-  const dish = useAppSelector(state => state.cart.menu).filter(m => m.id === id)[0]
 
+  const menu = useAppSelector(state => state.cart.menu);
+
+  const index = menu.findIndex(m => m.id === id);
+  const quantity = menu[index].qty
 
   return (
     <div className={`card m-2 ${css.card}`} style={{ backgroundColor: '#fbf8ee' }}>
@@ -19,14 +23,25 @@ const MenuItem = ({ image, name, description, category, price, id, inCart }: Dis
         <img className='w-100 mx-auto' src={image} alt={name} />
         <p className='card-text'>{description}</p>
 
-        <h6 className={` ${css.price} mx-auto mb-3`} style={{ position: 'absolute', bottom: '50px', right: '110px' }}>{price} &#8362; </h6>
+        <h6 className={` ${css.price} mx-auto mb-3`} style={{ position: 'absolute', bottom: '80px', right: '110px' }}>{price} &#8362; </h6>
 
 
-        <button className="btn" style={{ position: 'absolute', bottom: '15px', right: '120px' }}
-          onClick={() => dispatch(cart(id))}>
-          {dish.inCart && <Badge color="secondary" badgeContent={1}><ShoppingCartIcon /></Badge>}
-          {!dish.inCart && <ShoppingCartIcon />}
-        </button>
+        <div className={`p-3 ${css.cart}`} style={{ position: 'absolute', bottom: '15px', right: '60px' }}>
+          <button className='btn btn-outline-secondary'
+            onClick={() => { dispatch(removeFromCart(id)) }}>
+            <RemoveIcon fontSize="small" />
+          </button>
+
+          <h6><Badge color="secondary" badgeContent={quantity} className="mx-2 pt-1"><ShoppingCartIcon /></Badge>{" "}</h6>
+
+            <button className='btn btn-outline-secondary'
+              onClick={() => { dispatch(addToCart(id)) }}>
+              <AddIcon fontSize="small" />
+            </button>
+            
+        </div>
+
+
       </div>
     </div >
   )

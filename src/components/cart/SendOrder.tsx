@@ -7,8 +7,6 @@ import PaymentsOptions from '../orderDetails/PaymentsOptions';
 import OrderOptions from '../orderDetails/OrderOptions';
 import UserDetails from '../orderDetails/UserDetails';
 import { addShippingPrice, removeShippingPrice } from '../../features/shippingPrice/shippingPrice'
-import UserDetails2 from '../orderDetails/UserDetails2';
-import UserDetails3 from '../orderDetails/UserDetails3';
 
 const Order = () => {
     const navigate = useNavigate()
@@ -17,9 +15,7 @@ const Order = () => {
     const { totalPrice } = useAppSelector(state => state.cart)
     const [price, setPrice] = useState(totalPrice);
 
-    const { menu } = useAppSelector(state => state.cart);
-    const cartMenu = menu.filter(m => m.inCart)
-    const detailsNumber = cartMenu.length
+    const detailsNumber = useAppSelector(state => state.cart.itemsInCart)
 
     const shippingCost = 35
     const totalWithShipping = totalPrice + shippingCost
@@ -101,7 +97,7 @@ const Order = () => {
 
             <div className='card p-3 mt-4 w-50 mx-auto' style={{ backgroundColor: '#fbf8ee' }}>
                 <h5>פרטים אישיים:</h5>
-                <UserDetails2 theCity={cityHandler} />
+                <UserDetails theCity={cityHandler} />
                 <OrderOptions theOption={optionHandler} />
 
 

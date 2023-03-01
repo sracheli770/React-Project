@@ -1,50 +1,6 @@
 import { Dish, Home } from "../@types/types"
 import { v4 } from "uuid"
-import StartersFoccia from '../images/starters/starters.foccia.jpg'
-import StartersSpicy from '../images/starters/starters.spicy.png'
-import StartersTchina from '../images/starters/starters.tchina.png'
-import StartersChips from '../images/starters/starters.chips.jpg'
-import StartersCauliflower from '../images/starters/starters.cauliflower.jpg'
-import StartersEggplanet from '../images/starters/starters.eggplanet.jpg'
-import StartersLiver from '../images/starters/starters.liver.jpg'
-import StartersFilloMeat from '../images/starters/starters.filloMeat.jpg'
-import StartersHumus from '../images/starters/starters.humus.jpg'
-import SaladsLentil from '../images/salads/salads.lentil.jpg'
-import SaladsLeaves from '../images/salads/salads.leaves.jpg'
-import SaladsChicken from '../images/salads/salads.chicken.jpg'
-import MainSteak from '../images/main/main.steak.jpg'
-import MainBurger from '../images/main/main.burger.jpg'
-import MainBurger3 from '../images/main/main.burger3.jpg'
-import MainHodu from '../images/main/main.hodu.jpg'
-import MainAsado from '../images/main/main.asado.jpg'
-import MainSania from '../images/main/main.sania.jpg'
-import MainSteak2 from '../images/main/main.steak2.jpg'
-import MainBurgerChildren from '../images/main/main.burgerChildren.jpg'
-import MainChest from '../images/main/main.chest.jpg'
-import MainShawarma from '../images/main/main.shawarma.jpg'
-import MainBurgerVegan from '../images/main/main.burgerVegan.jpg'
-import FishMusar from '../images/fish/fish.musar.jpg'
-import FishSalmon from '../images/fish/fish.salmon.jpg'
-import FishAmnon from '../images/fish/fish.amnon.jpg'
-import DessertsFilloApple from '../images/desserts/desserts.filloApple.jpg'
-import DessertsSofle from '../images/desserts/desserts.sofle.jpg'
-import DessertsMalbi from '../images/desserts/desserts.malbi.jpg'
-import DessertsPatifors from '../images/desserts/desserts.patifors.jpg'
-import DessertsSorve from '../images/desserts/desserts.sorve.jpg'
-import SoftdrinkWater from '../images/softDrink/softDrink.water.png'
-import SoftdrinkSparklingWater from '../images/softDrink/softDrink.sparklingWater.png'
-import SoftdrinkSoda from '../images/softDrink/softDrink.soda.png'
-import SoftdrinkOrange from '../images/softDrink/softDrink.orange.png'
-import SoftdrinkCola from '../images/softDrink/softDrink.cola.png'
-import SoftdrinkSprite from '../images/softDrink/softDrink.sprite.png'
-import SoftdrinkPrigat from '../images/softDrink/softDrink.prigat.png'
-import SoftdrinkBeer from '../images/softDrink/softDrink.beer.png'
-import HotDrinkBlackCoffee from '../images/hotDrink/hotDrink.blackCoffee.jpg'
-import HotDrinkTea from '../images/hotDrink/hotDrink.tea2.png'
-import HotDrinkNanaTea from '../images/hotDrink/hotDrink.nanaTea.jpg'
-import HotDrinkEsspressoCoffee from '../images/hotDrink/hotDrink.esspressoCoffee.jpg'
-import HotDrinkDoubleEsspressoCoffee from '../images/hotDrink/hotDrink.doubleEsspressoCoffee.jpg'
-import HotDrinkAmericanoCoffee from '../images/hotDrink/hotDrink.americanoCoffee.png'
+import { StartersFoccia, StartersSpicy, StartersTchina, StartersChips, StartersCauliflower, StartersEggplanet, StartersLiver, StartersFilloMeat, StartersHumus, SaladsLentil, SaladsLeaves, SaladsChicken, MainSteak, MainBurger, MainBurger3, MainHodu, MainAsado, MainSania, MainSteak2, MainBurgerChildren, MainChest, MainShawarma, MainBurgerVegan, FishMusar, FishSalmon, FishAmnon, DessertsFilloApple, DessertsSofle, DessertsMalbi, DessertsPatifors, DessertsSorve, SoftdrinkWater, SoftdrinkSparklingWater, SoftdrinkSoda, SoftdrinkOrange, SoftdrinkCola, SoftdrinkSprite, SoftdrinkPrigat, SoftdrinkBeer, HotDrinkBlackCoffee, HotDrinkTea, HotDrinkNanaTea, HotDrinkEsspressoCoffee, HotDrinkDoubleEsspressoCoffee, HotDrinkAmericanoCoffee } from './mainMenuImages'
 
 export const homeMenu: Home[] = [
     {
@@ -94,7 +50,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 26,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "starters",
@@ -105,7 +62,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 18,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "starters",
@@ -116,7 +74,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 28,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "starters",
@@ -127,7 +86,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 38,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "starters",
@@ -138,7 +98,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 48,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "starters",
@@ -149,7 +110,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 48,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "starters",
@@ -160,7 +122,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 54,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "starters",
@@ -171,7 +134,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 62,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "starters",
@@ -182,7 +146,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 58,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "salads",
@@ -193,7 +158,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 62,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "salads",
@@ -204,7 +170,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 58,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "salads",
@@ -215,7 +182,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 68,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "main",
@@ -226,7 +194,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 94,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "main",
@@ -237,7 +206,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 84,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "main",
@@ -248,7 +218,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 98,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "main",
@@ -259,7 +230,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 78,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "main",
@@ -270,7 +242,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 118,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "main",
@@ -281,7 +254,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 88,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "main",
@@ -292,7 +266,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 168,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "main",
@@ -303,7 +278,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 58,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "main",
@@ -314,7 +290,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 58,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "main",
@@ -325,7 +302,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 66,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "main",
@@ -336,7 +314,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 69,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "fish",
@@ -347,7 +326,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 118,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "fish",
@@ -358,7 +338,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 98,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "fish",
@@ -369,7 +350,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 74,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "desserts",
@@ -380,7 +362,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 42,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "desserts",
@@ -391,7 +374,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 44,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "desserts",
@@ -402,7 +386,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 38,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "desserts",
@@ -413,7 +398,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 42,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "desserts",
@@ -424,7 +410,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 36,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "softDrink",
@@ -435,7 +422,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 14,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "softDrink",
@@ -446,7 +434,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 30,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "softDrink",
@@ -457,7 +446,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 12,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "softDrink",
@@ -468,7 +458,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 16,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "softDrink",
@@ -479,7 +470,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 15,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "softDrink",
@@ -490,7 +482,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 15,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "softDrink",
@@ -501,7 +494,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 15,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "softDrink",
@@ -512,7 +506,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 18,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "hotDrink",
@@ -523,7 +518,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 10,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "hotDrink",
@@ -534,7 +530,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 12,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "hotDrink",
@@ -545,7 +542,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 14,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "hotDrink",
@@ -556,7 +554,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 10,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "hotDrink",
@@ -567,7 +566,8 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 12,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     },
     {
         "category": "hotDrink",
@@ -578,6 +578,7 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 14,
         "id": v4(),
-        "inCart": false
+        "inCart": false,
+        "qty": 0
     }
 ]

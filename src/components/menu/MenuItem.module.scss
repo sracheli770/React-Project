@@ -8,5 +8,14 @@
     border: 1px solid gray;
     border-radius: 10px;
     width: 25%;
-    padding: 4px;
+    padding: 6px;
+}
+
+.cart {
+    display: flex;
+    flex-direction: row;
+
+    button{
+        font-size: xx-small;
+    }
 }

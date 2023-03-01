@@ -5,7 +5,7 @@ import Details from '../details/Details'
 const About = () => {
   return (
     <div dir='rtl' className='container mx-auto'>
-      <h2 className='my-4'>אודות</h2>
+      <h2 className='my-3'>אודות</h2>
       <AboutUs />
 
       <div className='mb-3 mt-5 text-end w-50 mx-auto'>
