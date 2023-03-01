@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/דרישות לפרויקט אמצע - צד לקוח - גרסה 1.1.pdf
 
 # testing
 /coverage
@@ -21,6 +22,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-
-*.pdf
