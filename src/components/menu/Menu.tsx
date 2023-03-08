@@ -20,12 +20,6 @@ const Menu = () => {
   const vegetarian = theMenu.filter(m => m.vegetarian)
   const glutandvaga = theMenu.filter(m => m.glutenFree && m.vegetarian)
 
-
-  //לחפש משפט תנאי מתאים ומיקום מתאים, כרגע עובד
-  /* if (!theMenu) {
-    return <Navigate to='/404' />
-  } */
-
   return (
     <div dir='rtl' className='container text-center'>
       <h2 className='my-3'>תפריט {nameOfCategory}</h2>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { Comments } from '../../@types/types'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { editComment } from '../../features/comments/commentsSlice'
+import { editComment } from '../../features/commentsSlice'
 
 const EditComment = () => {
     const { id } = useParams()
@@ -65,15 +65,20 @@ const EditComment = () => {
                     {note}
 
                     <button className='btn btn-success w-25 mx-auto mt-2 mb-5' onClick={() => {
-                        if (comment.length < 4) { setNote(<p className='text-end text-danger'>תגובתך צריכה להכיל לפחות 4 תווים</p>); return }
+                        if (comment.length < 4) { setNote(<p className='text-end text-danger'>תגובתך צריכה להכיל לפחות 4 תווים</p>); }
+                        else if (comment.length > 255) {
+                            setNote(<p className='text-end text-danger'>תגובתך יכולה להכיל עד 255 תווים</p>);
+                        }
 
-                        const editedComment: Comments = {
-                            name: name,
-                            comment: comment,
-                            id: commentToEdit.id
-                        };
-                        dispatch(editComment(editedComment));
-                        nav(-1)
+                        else {
+                            const editedComment: Comments = {
+                                name: name,
+                                comment: comment,
+                                id: commentToEdit.id
+                            };
+                            dispatch(editComment(editedComment));
+                            nav(-1)
+                        }
                     }}>סיום עריכה</button>
                 </div>
             </div>

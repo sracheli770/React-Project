@@ -50,7 +50,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 26,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -62,7 +61,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 18,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -74,7 +72,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 28,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -86,7 +83,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 38,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -98,7 +94,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 48,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -110,7 +105,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 48,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -122,7 +116,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 54,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -134,7 +127,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 62,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -146,7 +138,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 58,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -158,7 +149,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 62,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -170,7 +160,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 58,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -182,7 +171,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 68,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -194,7 +182,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 94,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -206,7 +193,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 84,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -218,7 +204,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 98,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -230,7 +215,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 78,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -242,7 +226,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 118,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -254,7 +237,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 88,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -266,7 +248,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 168,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -278,7 +259,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 58,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -290,7 +270,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 58,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -302,7 +281,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 66,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -314,7 +292,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 69,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -326,7 +303,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 118,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -338,7 +314,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 98,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -350,7 +325,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": false,
         "price": 74,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -362,7 +336,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 42,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -374,7 +347,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 44,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -386,7 +358,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 38,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -398,7 +369,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 42,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -410,7 +380,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 36,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -422,7 +391,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 14,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -434,7 +402,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 30,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -446,7 +413,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 12,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -458,7 +424,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 16,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -470,7 +435,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 15,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -482,7 +446,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 15,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -494,7 +457,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 15,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -506,7 +468,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 18,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -518,7 +479,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 10,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -530,7 +490,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 12,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -542,7 +501,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 14,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -554,7 +512,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 10,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -566,7 +523,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 12,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     },
     {
@@ -578,7 +534,6 @@ export const mainMenu: Dish[] = [
         "vegetarian": true,
         "price": 14,
         "id": v4(),
-        "inCart": false,
         "qty": 0
     }
 ]

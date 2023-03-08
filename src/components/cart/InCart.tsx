@@ -2,7 +2,7 @@ import MenuItem from '../menu/MenuItem';
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { clearCart } from '../../features/cart/cartSlice'
+import { clearCart } from '../../features/cartSlice'
 import Swal from 'sweetalert2';
 import { BsTrash } from "react-icons/bs";
 
@@ -11,8 +11,8 @@ const InCart = () => {
     const dispatch = useAppDispatch()
     const { menu } = useAppSelector(state => state.cart)
     const cartMenu = menu.filter(m => m.qty > 0)
-    const totalPrice = useAppSelector(state=>state.cart.totalPrice)
-    const detailsNumber = useAppSelector(state=>state.cart.itemsInCart)
+    const totalPrice = useAppSelector(state => state.cart.totalPrice)
+    const detailsNumber = useAppSelector(state => state.cart.itemsInCart)
 
     return (
         <div dir='rtl' className='container text-center'>
@@ -62,9 +62,17 @@ const InCart = () => {
                     }).then((result) => {
                         if (result.isConfirmed) {
                             dispatch(clearCart())
-                            Swal.fire('הסל התרוקן בהצלחה', '', 'success')
+                            Swal.fire({
+                                title: "הסל התרוקן בהצלחה",
+                                icon: "success",
+                                confirmButtonColor: "green"
+                            })
                         } else if (result.isDenied) {
-                            Swal.fire('המשך בקניה', '', 'info')
+                            Swal.fire({
+                                title: "המשך בקניה",
+                                icon: "info",
+                                confirmButtonColor: "green"
+                            })
                         }
                     })
                 }}      >

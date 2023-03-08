@@ -9,7 +9,7 @@ const OrderOptions = ({ theOption }: any) => {
 
     return (
         <>
-            <div className="d-flex mt-5 mb-3">
+            <div className="d-flex mt-3 mb-3">
                 <label htmlFor="orderOptions">אפשרויות הזמנה: &nbsp;</label>
                 <select className='form-select w-25'
                     value={orderOptions}

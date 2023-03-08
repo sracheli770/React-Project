@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { v4 } from 'uuid'
 import { useAppDispatch } from '../../app/hooks'
-import { addComment } from '../../features/comments/commentsSlice'
+import { addComment } from '../../features/commentsSlice'
 import { Comments } from '../../@types/types'
 
 const AddComment = () => {
@@ -60,15 +60,20 @@ const AddComment = () => {
                     {note}
 
                     <button className='btn btn-success w-25 mx-auto mt-2 mb-5' onClick={() => {
-                        if (comment.length < 4) { setNote(<p className='text-end text-danger'>תגובתך צריכה להכיל לפחות 4 תווים</p>); return }
+                        if (comment.length < 4) { setNote(<p className='text-end text-danger'>תגובתך צריכה להכיל לפחות 4 תווים</p>); }
+                        else if (comment.length > 255) {
+                            setNote(<p className='text-end text-danger'>תגובתך יכולה להכיל עד 255 תווים</p>);
+                        }
 
-                        const newComment: Comments = {
-                            name: name,
-                            comment: comment,
-                            id: v4()
-                        };
-                        dispatch(addComment(newComment));
-                        nav(-1)
+                        else {
+                            const newComment: Comments = {
+                                name: name,
+                                comment: comment,
+                                id: v4()
+                            };
+                            dispatch(addComment(newComment));
+                            nav(-1)
+                        }
                     }}>הוספת תגובה</button>
                 </div>
             </div>

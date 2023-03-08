@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { mainMenu } from '../../services/mainMenu';
+import { mainMenu } from '../services/mainMenu';
 
 const initialState = {
     quantity: 0,

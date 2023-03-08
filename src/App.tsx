@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import NotFound from './components/404/NotFound';
 import About from './components/about/About';
 import InCart from './components/cart/InCart';
 import SendOrder from './components/cart/SendOrder';
@@ -28,8 +27,7 @@ function App() {
         <Route path='/comments/edit/:id' element={<EditComment />} />
         <Route path='/comments/add-comment' element={<AddComment />} />
         <Route path='/cart' element={<InCart />} />
-        <Route path='/send-order' element={<SendOrder />} />
-        <Route path='/404' element={<NotFound />} />
+        <Route path='/send-order' element={<SendOrder/>} />
       </Routes>
 
       <GoToTop />

@@ -7,8 +7,7 @@ export type Dish = {
     vegetarian: boolean;
     price: number;
     id: string;
-    inCart: boolean;
-    qty:number;
+    qty: number;
 };
 
 export type Home = {
@@ -30,4 +29,10 @@ export type UserDetailsType = {
     street: string;
     houseNumber: string;
     notes?: string;
+}
+
+export type CreditCardType = {
+    creditCardNumber: string,
+    validity: string,
+    cvv: string
 }
