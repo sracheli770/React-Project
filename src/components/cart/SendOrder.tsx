@@ -49,17 +49,20 @@ const SendOrder = () => {
         switch (option) {
             case 'sit':
                 dispatch(removeShippingPrice(price));
-                setPrice(totalWithoutShipping)
+                setPrice(totalWithoutShipping);
+                setPriceShipping(withoutShipping);
                 break;
 
             case 'take':
                 dispatch(removeShippingPrice(price));
-                setPrice(totalWithoutShipping)
+                setPrice(totalWithoutShipping);
+                setPriceShipping(withoutShipping);
                 break;
 
             case 'ship':
                 dispatch(addShippingPrice(price));
-                setPrice(totalWithShipping)
+                setPrice(totalWithShipping);
+                setPriceShipping(withShipping);
                 over200()
                 break;
         }

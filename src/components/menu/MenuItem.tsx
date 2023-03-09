@@ -32,7 +32,7 @@ const MenuItem = ({ image, name, description, category, price, id, qty }: Dish) 
             <AddIcon fontSize="small" />
           </button>
 
-          <Badge color="secondary" badgeContent={quantity} className="mx-2 pt-1"><ShoppingCartIcon /></Badge>
+          <Badge overlap="rectangular" color="secondary" badgeContent={quantity} className="mx-2 pt-1"><ShoppingCartIcon /></Badge>
 
           <button className='btn btn-outline-secondary'
             onClick={() => { dispatch(removeFromCart(id)) }}>

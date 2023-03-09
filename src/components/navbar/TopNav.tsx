@@ -26,7 +26,7 @@ const TopNav = () => {
                             <span className={`nav-link mx-2 ${css.limit}`}>|</span>
                             <NavLink className='nav-link mx-2' to="/cart">
                                 
-                                <Badge color="secondary" badgeContent={detailsNumber} className="mx-2"><ShoppingCartIcon /></Badge>
+                                <Badge overlap="rectangular" color="secondary" badgeContent={detailsNumber} className="mx-2"><ShoppingCartIcon /></Badge>
                                 </NavLink>
                         </Nav>
                     </Navbar.Collapse>
