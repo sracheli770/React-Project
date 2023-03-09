@@ -29,10 +29,11 @@ export type UserDetailsType = {
     street: string;
     houseNumber: string;
     notes?: string;
-}
-
-export type CreditCardType = {
     creditCardNumber: string,
     validity: string,
     cvv: string
+}
+
+export type CommentType = {
+    comment: string
 }

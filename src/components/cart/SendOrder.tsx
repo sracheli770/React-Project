@@ -6,13 +6,11 @@ import { clearCart } from '../../features/cartSlice'
 import OrderOptions from '../orderDetails/OrderOptions';
 import { addShippingPrice, removeShippingPrice } from '../../features/shippingPrice'
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { initialValuesUserDetails, initialValuesCreditCard } from '../../services/initialStates';
-import { validationSchemaUserDetails, validationSchemaCreditCard } from '../../services/validationSchemas';
-
-
+import { initialValuesDetails } from '../../services/initialState';
+import { validationSchemaDetails } from '../../services/validationSchema';
 
 const SendOrder = () => {
-    const navigate = useNavigate()
+ const navigate = useNavigate()
     const dispatch = useAppDispatch()
 
     //For the price:
@@ -94,85 +92,8 @@ const SendOrder = () => {
     //For the validation:
     const [formValid, setFormValid] = useState(false);
 
-    const creditCard = <>
-        <Formik
-            initialValues={initialValuesCreditCard}
-            validationSchema={validationSchemaCreditCard}
-            validate={(values) => {
-                const errors = {};
-                const valid = Object.keys(errors).length === 0;
-                setFormValid(valid);
-                return errors;
-            }}
-            onSubmit={values => {
-                console.log(values);
-            }}
-        >
-            {({ handleSubmit }) => (
-                <Form>
-                    <div className="d-flex my-4">
-                        <label htmlFor="paymentsNumber">מס' תשלומים: &nbsp;</label>
-                        <select className='form-select w-25'
-                            name='paymentsNumber'
-                            id='paymentsNumber'
-                            style={{ backgroundColor: '#fbf8ee' }}
-                        >
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </div>
+    const [isCreditCard, setCreditCard] = useState(true)
 
-                    <Field
-                        name="creditCardNumber"
-                        id='creditCardNumber'
-                        type="text"
-                        placeholder="מספר כרטיס אשראי 1234-1234-1234-1234"
-                        className="form-control mt-3"
-                        style={{ backgroundColor: '#fbf8ee' }}
-                    />
-                    <ErrorMessage
-                        name="creditCardNumber"
-                        component="div"
-                        className="text-danger text-end mt-1 p-1"
-                    />
-
-                    <Field
-                        name="validity"
-                        id='validity'
-                        type="text"
-                        placeholder="תוקף 10/27"
-                        className="form-control mt-3"
-                        style={{ backgroundColor: '#fbf8ee' }}
-                    />
-                    <ErrorMessage
-                        name="validity"
-                        component="div"
-                        className="text-danger text-end mt-1 p-1"
-                    />
-
-                    <Field
-                        name="cvv"
-                        id='cvv'
-                        type="text"
-                        placeholder="CVV"
-                        className="form-control mt-3"
-                        style={{ backgroundColor: '#fbf8ee' }}
-                    />
-                    <ErrorMessage
-                        name="cvv"
-                        component="div"
-                        className="text-danger text-end mt-1 p-1"
-                    />
-                </Form>
-            )}
-        </Formik>
-    </>
-
-    const cash = <></>
-
-    const [paymentOptions, setPaymentOptions] = useState('creditCard')
-    const [paymentOption, setPaymentOption] = useState(creditCard)
 
     return (
         <div dir='rtl' className='text-center mx-auto'>
@@ -191,8 +112,8 @@ const SendOrder = () => {
                 <h5 className='mt-3'>פרטים אישיים:</h5>
                 <div>
                     <Formik
-                        initialValues={initialValuesUserDetails}
-                        validationSchema={validationSchemaUserDetails}
+                        initialValues={initialValuesDetails}
+                        validationSchema={validationSchemaDetails}
                         validate={(values) => {
                             const errors = {};
                             const valid = Object.keys(errors).length === 0;
@@ -295,23 +216,19 @@ const SendOrder = () => {
 
 
 
-
-
                                 <h5 className='mt-4'>פרטי תשלום:</h5>
 
                                 <div className="d-flex mt-5 mb-3">
                                     <label htmlFor="paymentOptions">תשלום באמצעות: &nbsp;</label>
                                     <select className='form-select w-25'
-                                        value={paymentOptions}
                                         name='paymentOptions'
                                         id='paymentOptions'
                                         onChange={(e) => {
                                             const option = e.currentTarget.value;
-                                            setPaymentOptions(option)
 
                                             switch (option) {
-                                                case 'creditCard': setPaymentOption(creditCard); break;
-                                                case 'cash': setPaymentOption(cash); break;
+                                                case 'creditCard': setCreditCard(true); break;
+                                                case 'cash': setCreditCard(false); break;
                                             }
                                         }}
                                         style={{ backgroundColor: '#fbf8ee' }}
@@ -320,8 +237,63 @@ const SendOrder = () => {
                                         <option value="cash">מזומן</option>
                                     </select>
                                 </div>
-                                {paymentOption}
 
+                                {isCreditCard && <>
+                                    <div className="d-flex my-4">
+                                        <label htmlFor="paymentsNumber">מס' תשלומים: &nbsp;</label>
+                                        <select className='form-select w-25'
+                                            name='paymentsNumber'
+                                            id='paymentsNumber'
+                                            style={{ backgroundColor: '#fbf8ee' }}
+                                        >
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+
+                                    <Field
+                                        name="creditCardNumber"
+                                        id='creditCardNumber'
+                                        type="text"
+                                        placeholder="מספר כרטיס אשראי 1234-1234-1234-1234"
+                                        className="form-control mt-3"
+                                        style={{ backgroundColor: '#fbf8ee' }}
+                                    />
+                                    <ErrorMessage
+                                        name="creditCardNumber"
+                                        component="div"
+                                        className="text-danger text-end mt-1 p-1"
+                                    />
+
+                                    <Field
+                                        name="validity"
+                                        id='validity'
+                                        type="text"
+                                        placeholder="תוקף 10/27"
+                                        className="form-control mt-3"
+                                        style={{ backgroundColor: '#fbf8ee' }}
+                                    />
+                                    <ErrorMessage
+                                        name="validity"
+                                        component="div"
+                                        className="text-danger text-end mt-1 p-1"
+                                    />
+
+                                    <Field
+                                        name="cvv"
+                                        id='cvv'
+                                        type="text"
+                                        placeholder="CVV"
+                                        className="form-control mt-3"
+                                        style={{ backgroundColor: '#fbf8ee' }}
+                                    />
+                                    <ErrorMessage
+                                        name="cvv"
+                                        component="div"
+                                        className="text-danger text-end mt-1 p-1"
+                                    />
+                                </>}
 
                                 <button dir='rtl' className="btn btn-danger w-25 mx-auto mt-4"
                                     type="submit"
