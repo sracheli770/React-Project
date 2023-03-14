@@ -33,7 +33,7 @@ const InCart = () => {
                 )}
 
 
-                <div className='card mx-auto w-50 my-4' style={{ backgroundColor: '#fbf8ee' }}>
+                <div className='card mx-auto w-50 my-4 p-2' style={{ backgroundColor: '#fbf8ee' }}>
                     <h4 className='my-3'>סיכום פרטי הזמנה</h4>
                     <h6 className='mb-3'>מספר הפריטים בסל: {detailsNumber}</h6>
                     <h5>סה"כ לתשלום:  {totalPrice} &#8362; </h5>

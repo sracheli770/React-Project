@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <div dir='rtl' className='container text-center'>
             <img className={css.logo} src={logo} alt="" />
-             <h2 className='my-4'>ברוכים הבאים למסעדת אסאדו</h2>
+             <h2 className='my-4 w-50 mx-auto'>ברוכים הבאים למסעדת אסאדו</h2>
             <AboutUs/>
 
             <h2 className='mb-3 mt-5'>תפריט ראשי</h2>

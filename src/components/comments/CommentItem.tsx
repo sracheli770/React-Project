@@ -12,14 +12,14 @@ const CommentItem = ({ name = 'אורח', comment, id }: Comments) => {
 
     return (
         <div className={`card m-2 ${css.card}`} style={{ backgroundColor: '#fbf8ee' }}>
-            <div className="card-body">
+            <div className="card-body m-1">
                 <h4 className='card-title'>{name}</h4>
                 <p className='card-text pb-4'>{comment}</p>
-                <button className="btn" onClick={() => { nav(`/comments/edit/${id}`) }} style={{ position: 'absolute', bottom: '20px', right: '100px' }}>
+                <button className="btn" onClick={() => { nav(`/comments/edit/${id}`) }} style={{ position: 'absolute', bottom: '10%', right: '35%' }}>
                     <BsPencil color='blue' />
                 </button>
 
-                <button dir='rtl' className="btn" style={{ position: 'absolute', bottom: '20px', left: '100px' }}
+                <button dir='rtl' className="btn" style={{ position: 'absolute', bottom: '10%', left: '35%' }}
                     onClick={() => {
                         Swal.fire({
                             title: 'האם אתה בטוח שברצונך למחוק?',
