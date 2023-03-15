@@ -7,6 +7,8 @@ import { MdOutlineEmail } from 'react-icons/md'
 import css from './Footer.module.scss'
 
 export default function App() {
+    const currentYear = new Date().getFullYear()
+
     return (
         <>
             <div className={css.border}></div>
@@ -32,7 +34,7 @@ export default function App() {
                     </MDBContainer>
 
                     <div dir='ltr' className='text-center text-secondary p-3' style={{ backgroundColor: '#fbf8ee' }}>
-                        © Racheli Sasonkin 2023
+                        © Racheli Sasonkin {currentYear}
                     </div>
                 </MDBFooter>
             </footer>
