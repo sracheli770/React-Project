@@ -20,11 +20,11 @@ const cartSlice = createSlice({
         },
         removeFromCart: (state, action: PayloadAction<string>) => {
             const index = state.menu.findIndex(a => a.id === action.payload);
-            state.menu[index].qty -= 1;
-            if (state.menu[index].qty < 0) { state.menu[index].qty = 0 };
-
-            state.totalPrice -= state.menu[index].price;
-            state.itemsInCart -= 1;
+            if (state.menu[index].qty >= 1) {
+                state.menu[index].qty -= 1;
+                state.totalPrice -= state.menu[index].price;
+                state.itemsInCart -= 1;
+            }
         },
         clearCart: (state) => {
             state.menu.forEach(m => m.qty = 0);
